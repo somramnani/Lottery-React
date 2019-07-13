@@ -39,7 +39,16 @@ onSubmit = async (event) => {
   this.setState({message: "You have been entered!"})
 };
 
+onClick = async (event) => {
+  const accounts = await web3.eth.getAccounts();
+  this.setState({message: 'Waiting on transaction success..'})
 
+  await lottery.methods.pickWinner().send({
+    from: accounts[0]
+  });
+
+  this.setState({ message: 'A winner has been picked'});
+}
 
 render(){
   return (
@@ -60,9 +69,7 @@ render(){
         <a target = "_blank" href="https://rinkeby.etherscan.io/address/0x698afdfff2ed5e71f9a9b59ea4b0fc6cb9f688a6">0x698afDffF2Ed5e71f9A9B59ea4b0fc6CB9f688a6</a> 
       </p>
 
-
-
-      <hr />
+      <hr/>
 
       <form onSubmit = {this.onSubmit}>
         <h4>Want to try your luck?</h4>
@@ -79,6 +86,13 @@ render(){
       <hr/>
 
       <h1>{this.state.message}</h1>
+
+      <hr/>
+      
+      <h4>Ready to pick a winner?</h4>
+      <button onClick ={this.onClick}>Pick a Winner!</button>
+      
+      <hr/>
 
     </div>
     );
