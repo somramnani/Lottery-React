@@ -47,7 +47,7 @@ onClick = async (event) => {
     from: accounts[0]
   });
 
-  this.setState({ message: 'A winner has been picked'});
+  this.setState({ message: 'A winner has been chosen'})
 }
 
 render(){
