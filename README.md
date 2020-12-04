@@ -1,11 +1,8 @@
 # Lottery-React
-An application powered by react which uses the smart contract from the Lottery-Contract Repo.
-
+An application that is powered by React which uses a smart contract that is built in Solidity. The contracts accepts users to enter into the lottery and the contract picks a random a winner. Once the winner is picked, the contract sends ether to the winner.
 
 ## How to Play
 - Must have MetaMask installed: https://metamask.zendesk.com/hc/en-us
-
-
 
 ## Languages/Tools Used
 - Solidity
